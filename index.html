@@ -23,7 +23,26 @@
         /**
          * Sorunun cevabını bu yorumdan sonra yazınız.
          */
+        var sayi = 0; //bilgisayar tarafından tutulacak sayı
+        var tahmin = 0; // kullanıcının tahmini
+        var sayac = 0; // kullanıcının tahmin sayısı
 
+        sayi = Math.round(Math.random() * 100); // 0 ile 100 arasında rasgele bir sayı üretiyyoruz
+        // sayı tahminlerini alacak döngüyü oluşturuyoruz
+        do {
+            sayac++; // tahmin sayacını bir arttırarak tahminleri saymaya başlıyoruz.
+            tahmin = Number(prompt("Sayı tahmininiz nedir ? ")); // uyarı kutucuğuyle kullanıcıdan bir tahmin girmsini istiyoruz
+            if (tahmin === 0) { // eğer kullanıcı açılan uyarı kutucuğunda vazgeç butonuna tıkladıysa oyundan çıkıyoruz.
+                alert("Oyundan çıktınız");
+                break; //döngüden çıkıyoruz.
+            }
+            if (tahmin < sayi)
+                alert("Tahmininiz tuttuğum sayıdan daha küçük"); // eğer tahmin tutulansayıdan küçük ise bildiriyoruz
+            else if (tahmin > sayi)
+                alert("Tahmininiz tuttuğum sayıdan daha büyük"); // eğer tahmin tutulansayıdan büyük ise bildiriyoruz
+            else if (tahmin === sayi)
+                alert("Tebrikleri tuttuğum sayıyı " + sayac + ". denemede buldun."); // Tahmin tutulan sayıya eşit ise kutlama mesajı ile tahmin sayısını gösteriyoruz.
+        } while (tahmin !== sayi); // döngü tutulan sayı ile tahmin edilen sayı aynı olmadığı sürece devam ediyor.
         </script>
     <div class="clearfix"></div>
 </div>
